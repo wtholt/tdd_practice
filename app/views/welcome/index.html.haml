@@ -1,3 +1,13 @@
 .row
   %h1{class: 'col-xs-12 text-center'}
-    Todo List
+    Welcome, Please Sign up or Log in.
+.row
+  %h3{class: 'col-xs-12 text-center'}
+    - if user_signed_in?
+      = link_to "Log Out", destroy_user_session_path
+    - else
+      = link_to "Sign Up", new_user_registration_path
+      = link_to "Log In", new_user_session_path
+.row
+  %h3{class: 'col-xs-12 text-center'}
+    = link_to "Your Todo List", items_path
